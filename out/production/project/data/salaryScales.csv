@@ -1,0 +1,56 @@
+Position,Salary,Point,Hourly
+President,240716,0,false
+Vice President,184171,0,false
+Full Professor,140068,1,false
+Full Professor,148055,2,false
+Full Professor,156042,3,false
+Full Professor,164028,4,false
+Full Professor,172016,5,false
+Full Professor,177078,6,false
+Professor,101447,1,false
+Professor,108276,2,false
+Professor,115107,3,false
+Professor,121935,4,false
+Professor,128770,5,false
+Professor,135598,6,false
+Associate Professor A,87548,1,false
+Associate Professor A,91018,2,false
+Associate Professor A,94492,3,false
+Associate Professor A,97988,4,false
+Associate Professor A,101461,5,false
+Associate Professor A,104948,6,false
+Associate Professor A,108430,7,false
+Associate Professor A,111916,8,false
+Associate Professor A,115395,9,false
+Associate Professor B,62069,1,false
+Associate Professor B,73093,2,false
+Associate Professor B,77006,3,false
+Associate Professor B,79703,4,false
+Associate Professor B,83634,5,false
+Associate Professor B,87604,6,false
+Associate Professor B,91563,7,false
+Associate Professor B,95514,8,false
+Associate Professor B,99471,9,false
+Assistant Professor,46955,1,false
+Assistant Professor,49543,2,false
+Assistant Professor,51676,3,false
+Assistant Professor,53644,4,false
+Assistant Professor,55689,5,false
+Assistant Professor,57323,6,false
+Assistant Professor,58990,7,false
+Assistant Professor,60654,8,false
+Assistant Professor,62314,9,false
+Assistant Professor,63965,10,false
+Teaching Assistant,37010,1,false
+Teaching Assistant,40061,2,false
+Assistant Senior Instructor,48.60,1,true
+Lead Instructor,45.90,1,true
+Assistant Instructor,36.50,1,true
+Assistant Instructor,39.95,2,true
+Exam Invigilator,16.19,1,true
+Exam Invigilator,17.20,2,true
+Exam Invigilator,18.40,3,true
+Exam Supervisor,13.50,1,true
+Exam Supervisor,14.85,2,true
+Exam Supervisor,15.20,3,true
+Exam Supervisor,15.80,4,true
