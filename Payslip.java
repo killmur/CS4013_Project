@@ -36,9 +36,8 @@ public class Payslip {
         this.unite = unite;
     }
 
-    public Payslip(String name, double year_to_date, double grossPay, double net, double paye, double prsi, double usc, double health, double union, boolean unite) {
+    public Payslip(String name, double grossPay, double net, double paye, double prsi, double usc, double health, double union) {
         this.name = name;
-        this.ytd = year_to_date;
         this.gross = grossPay;
         this.net = net;
         this.paye = paye;
@@ -46,7 +45,6 @@ public class Payslip {
         this.usc = usc;
         this.health = health;
         this.union = union;
-        this.unite = unite;
     }
 // Tax is to be calculated as if person is single, i.e. 42,000 @ 20% and balance @ 40%.
 

@@ -17,9 +17,18 @@ public class Employee {
     /**
      * Creates an Employee
      * @param name their name
+     * @param position thier position
+     * @param point their point on their respective payscale
+     * @param payClaim if they've submitted a pay-claim
+     * @param hireDate the date they were hired
      */
-    public Employee(String name) {
+    public Employee(String name,String position,int point,boolean payClaim,LocalDate hireDate) {
         this.name = name;
+        this.position = position;
+        this.point = point;
+        this.payClaim = payClaim;
+        this.hireDate = hireDate;
+
     }
 
     /**
@@ -39,15 +48,8 @@ public class Employee {
         }
     }
 
-    
-    public void addPoint(){
-        if(point >= point-1){
-            System.out.println("You are at the highest point of salary in your deprarment!");
-        }else{
-            point == point+1;
-            System.out.println("Congratulations you have been ranked up in your department!");
-        }
-        
+    public void addPoint() {
+
     }
 
 }

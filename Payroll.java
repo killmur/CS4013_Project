@@ -1,4 +1,5 @@
 import java.io.*;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -9,31 +10,45 @@ public class Payroll {
     private File employeeCsv = new File("data/employees.csv");
 
 
-   /* public String getPayslips(String name) throws IOException {
-        String[] slip;
+    public String getPayslips(String name, char x) throws IOException {
         try {
+            String[] payslip;
+            ArrayList<String> s = new ArrayList<>();
             Scanner sc = new Scanner(payslipCsv);
-
             while (sc.hasNextLine()) {
-                String line = sc.next();
+                String line = sc.nextLine();
                 if (line.contains(name)) {
-                    slip = line.split(",");
+                    payslip = line.split(",");
+                    if (line.contains(name)) {
+                        for (int i = 0; i < payslip.length; i++) {
+                            s.add(payslip[i]);
+                        }
+                    }
                 }
             }
+            for (int i = 0; i < s.size(); ) {
+                payslips.add(new Payslip(s.get(i), Double.parseDouble(s.get(i + 1)), Double.parseDouble(s.get(i + 2)), Double.parseDouble(s.get(i + 3)), Double.parseDouble(s.get(i + 4)), Double.parseDouble(s.get(i + 5)), Double.parseDouble(s.get(i + 6)), Double.parseDouble(s.get(i + 7))));
+                i += 8;
+            }
+
+
         } catch (FileNotFoundException e) {
             System.out.println("File " + payslipCsv.getName() + " not found");
         }
-        for () {
-            payslips.add(new Payslip(slip[i], Double.parseDouble(slip[i + 1]), Double.parseDouble(slip[i + 2]), Double.parseDouble(slip[i + 3]), Double.parseDouble(slip[i + 4]), Double.parseDouble(slip[i + 5]), Double.parseDouble(slip[i + 6]), Double.parseDouble(slip[i + 7]), Double.parseDouble(slip[i + 8]), Boolean.getBoolean(slip[i + 9])));
-            i = i + 10;
+        if (x == 'a') {
+            String ret = "Payslips for " + name + "\n";
+            for (Payslip p : payslips) {
+                ret += p.toString() + "\n";
+            }
+            return ret;
+        } else if (x == 'r') {
+            String ret = "Most recent payslip for " + name + "\n";
+            int i = payslips.size() - 1;
+            ret += payslips.get(i).toString();
+            return ret;
         }
-        for (Payslip p : payslips) {
-            return p.toString();
-        }
-        return null;
+        return "No payslips found for " + name + "\n";
     }
-
-    */
 
     public double getSalary(String position, int point) throws IOException {
         try {
@@ -49,11 +64,13 @@ public class Payroll {
                     }
                 }
             }
+            sc.close();
             for (int i = 2; i < s.size(); ) {
                 if ((Integer.parseInt(s.get(i))) == point) {
                     return Double.parseDouble(s.get(i - 1));
                 }
                 i += 4;
+
             }
 
         } catch (FileNotFoundException e) {
@@ -87,7 +104,9 @@ public class Payroll {
                     details = line.split(",");
                     union = Boolean.getBoolean(details[5]);
                 }
+
             }
+            sc.close();
         }catch (FileNotFoundException e){
             System.out.println("File " + employeeCsv.getName() + " not found");
         }
@@ -101,5 +120,11 @@ public class Payroll {
         }
         p.save();
         return p;
+    }
+
+    public void addEmployee(String name, String position, int point) throws FileNotFoundException {
+        LocalDate hireDate = LocalDate.now();
+        Employee emp = new Employee(name, position, point, false, hireDate);
+        emp.save();
     }
 }

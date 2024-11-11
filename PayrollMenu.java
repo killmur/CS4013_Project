@@ -37,9 +37,10 @@ public void payroll(Payroll payroll) throws IOException {
             String empl = sc.nextLine().toUpperCase();
             if (empl.equals("A")) {
                 //view all payslips
-               // System.out.print(payroll.getPayslips(name));
+               System.out.print(payroll.getPayslips(name, 'a'));
             }else if(empl.equals("B")) {
                 //view most recent payslip
+                System.out.print(payroll.getPayslips(name, 'r'));
 
             }else if(empl.equals("C")) {
                 //submit pay claim
