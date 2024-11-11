@@ -39,4 +39,15 @@ public class Employee {
         }
     }
 
+    
+    public void addPoint(){
+        if(point >= point-1){
+            System.out.println("You are at the highest point of salary in your deprarment!");
+        }else{
+            point == point+1;
+            System.out.println("Congratulations you have been ranked up in your department!");
+        }
+        
+    }
+
 }
